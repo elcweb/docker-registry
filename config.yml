@@ -1,0 +1,30 @@
+version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/registry
+#  s3:
+#    accesskey: foo
+#    secretkey: foobar
+#    region: us-east-1
+#    bucket: evolocity-docker-registry
+#    encrypt: true
+#    keyid: # http://docs.aws.amazon.com/kms/latest/developerguide/programming-keys.html
+    secure: true
+http:
+  addr: :5000
+  headers:
+    X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
+auth:
+  htpasswd:
+    path: /auth/htpasswd
+    realm: Registry Realm

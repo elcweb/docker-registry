@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    registry:
+        restart: always
+        image: registry:2
+        ports:
+            - 5000:5000
+        environment:
+            REGISTRY_HTTP_SECRET: oOlxd0LMRGStSoxrZjJcjqxbLAB32u8r
+        volumes:
+            - ./config.yml:/etc/docker/registry/config.yml
+            - ./data:/var/lib/registry
+            - ./certs:/certs
+            - ./auth:/auth
