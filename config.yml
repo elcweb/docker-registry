@@ -11,7 +11,7 @@ storage:
 #    accesskey: foo
 #    secretkey: foobar
 #    region: us-east-1
-#    bucket: evolocity-docker-registry
+#    bucket: some-docker-registry
 #    encrypt: true
 #    keyid: # http://docs.aws.amazon.com/kms/latest/developerguide/programming-keys.html
     secure: true
